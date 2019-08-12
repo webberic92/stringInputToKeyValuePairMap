@@ -1,0 +1,17 @@
+
+
+NOTES
+
+
+  private static Map<String, String> generateMapFromQueryParams(String params) {
+    String[] paramsArray = params.split("&");
+
+    Map<String, String> queryMap = new HashMap<String, String>();
+
+    for (String param : paramsArray) {
+      queryMap.put(param.substring(0, param.indexOf("=")),
+        param.substring(param.indexOf("=") + 1, param.length()));
+    }
+
+    return queryMap;
+  } 
